@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<script>
+function funcao1(){
+  alert("Cadastro realizado com sucesso!");
+  sleep(1000);
+  window.location.href = "menu.html";
+}
+
+function sleep(delay){
+  var start = new Date().getTime();
+  while(new Date().getTime() < start + delay);
+}
+</script>
+
+<body>
+
+  <header>
+      <div class="container">
+          <h1>Cadastro de Alunos</h1>
+          <a href="menu.html">Voltar</a>
+      </div>
+  </header>
+
+    <main class="container">
+        <form method="post">
+            <fieldset>
+                <legend>Dados Pessoais</legend>
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" required >
+                <input type="radio" name="genero" value="male"> Masculino
+                <input type="radio" name="genero" value="female"> Feminino<br>
+                <label for="nascimento">Data de Nascimento</label>
+                <input type="date" name="nascimento"><br>
+                <label for="cpf">CPF:</label>
+                <input type="number" name="cpf"><br>
+                <label for="rg">RG:</label>
+                <input type="number" name="rg"><br><br>
+            </fieldset>
+
+            <fieldset>
+                <legend>Contato</legend>
+                 <label for="telefone">Telefone:</label>
+                <input type="tel" name="telefone"><br>
+                <label for="celular">Celular:</label>
+                <input type="tel" name="celular">
+                <input type="checkbox" name="tipo">Whatsapp
+                <input type="checkbox" name="tipo">Telegram
+                <input type="checkbox" name="tipo">Signal<br>
+                <label for="email">Email:</label>
+                <input type="email" name="email">
+                <label for="confirmacaoemail">Confirmação de Email</label>
+                <input type="email" name="confirmacaoemail"><br><br>
+            </fieldset>
+
+            <fieldset>
+                <legend>Endereço</legend>
+                <label for="rua">Rua:</label>
+                <input type="text" name="rua"><br>
+                <label for="numero">Número:</label>
+                <input type="text" name="numero"><br>
+                <label for="Complemento">Complemento:</label>
+                <input type="text" name="complemento"><br>
+                <label for="cidade">Cidade:</label>
+                <select name="cidade">
+                  <option value="0">Cidade:</option>
+                    <option value="0">Barão de Cocais</option>
+                    <option value="1">Catas Altas</option>
+                    <option value="2">Itabira</option>
+                    <option value="3">Santa Bárbara</option>
+                </select> <br>
+                <label for="estado">Estado:</label>
+                <select name="estado">
+                    <option value="0">UF:</option>
+                    <option value="1">ES</option>
+                    <option value="2">MG</option>
+                    <option value="3">RJ</option>
+                    <option value="4">SP</option>
+                </select><br><br>
+            </fieldset>
+
+            <fieldset>
+                <legend>Login</legend>
+                <label for="usuario">Usuário:</label>
+                <input type="text" name="usuario" required ><br>
+                <label for="senha">Senha:</label>
+                <input type="password" name="senha" required >
+                <label for="confirmacao">Confirmação de Senha:</label>
+                <input type="password" name="confirmacao" required ><br><br>
+            </fieldset>
+
+          <input type="reset" value="Limpar">
+          <input type="button" onclick="funcao1()" value="Cadastrar" />
+        </form>
+    </main>
+</body>
+</html>
