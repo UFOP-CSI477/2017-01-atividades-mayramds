@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<hltm>
+  <head>
+    <meta charset="utf-8">
+    <title>Cadastro de alunos</title>
+
+    <script>
+    function funcao1(){
+      alert("Cadastro realizado com sucesso!");
+      sleep(1000);
+      window.location.href = "menu.html";
+    }
+
+    function sleep(delay){
+      var start = new Date().getTime();
+      while(new Date().getTime() < start + delay);
+    }
+    </script>
+  </head>
+
+  <div>
+    <h1>Dados do aluno </h1>
+    <p>Preencher dados abaixo</p>
+  </div>
+
+    <form name="cadastro" action="validacao.html" method="get">
+
+      <label for="nome">Nome</label><br>
+      <input type="text" name="nome">
+
+      <input type="radio" name="genero" value="F">Feminino  <!-- "radio" seleciona apenas uma opção-->
+      <input type="radio" name="genero" value="M">Masculino<br><br>
+
+      <label for="cpf">CPF</label><br>
+      <input type="number" name="cpf"><br><br>
+
+      <label for="rg">RG</label><br>
+      <input type="number" name="rg"><br><br>
+
+      <label for="nascimento">Data de Nascimento</label><br>
+      <input type="date" name="nascimento"><br><br>
+
+      <select name="estado">
+        <option value="0">UF:</option>
+      <!--  <option value="5">AC</option>-->
+        <option value="1">MG</option>
+      <!--  <option value="2">RJ</option>
+        <option value="3">SP</option>
+        <option value="4">TO</option> -->
+      </select>
+
+      <select name="cidade">
+        <option value="0">Cidade:</option>
+        <option value="1">João Monlevade</option>
+        <option value="2">Itabira</option>
+        <option value="3">BH</option>
+        <option value="4">Barão de Cocais</option>
+        <option value="5">Rio Piracicaba</option>
+      </select><br><br>
+
+      <label for="rua">Rua</label><br>
+      <input type="text" name="rua"> <br><br>  <!-- <br> quebra linha-->
+
+      <label for="numero">Número</label><br>
+      <input type="number" name="numero"><br><br>
+
+      <label for="bairro">Bairro</label><br>
+      <input type="text" name="bairro"><br><br>
+
+      <label for="telefone">Telefone</label><br>
+      <input type="number" name="telefone"><br><br>
+
+      <label for="celular">Celular</label><br>
+      <input type="number" name="celular">
+
+      <input type="checkbox" name="tipo">Whatsapp
+      <input type="checkbox" name="tipo">Telegram
+      <input type="checkbox" name="tipo">Signal<br><br>  <!-- "checkbox" permite marcar mais de um botao-->
+
+      <label for="email">Email</label><br>
+      <input type="text" name="email"><br><br>
+
+      <label for="confirmacaoemail">Confirmação de Email</label><br>
+      <input type="text" name="confirmacaoemail"><br><br>
+
+      <label for="usuario">Usuário</label><br>
+      <input type="text" name="usuario"><br><br>
+
+      <label for="senha">Senha</label><br>
+      <input type="password" name="senha"><br><br>
+
+      <label for="confirmacaosenha">Confirmação de Senha</label><br>
+      <input type="password" name="confirmacaosenha"><br><br><br>
+
+
+    <!--  <a href="formulario1.html">Cadastro</a>
+      <input type="submit" value="Cadastrar"> -->
+
+
+      <a href="menu.html">Voltar</a>
+      <input type="reset" value="Limpar">
+      <input type="button" onclick="funcao1()" value="Cadastrar" />
+
+    </form>
+
+  </body>
+  <html>

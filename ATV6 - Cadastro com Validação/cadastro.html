@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Cadastro</title>
+    <link rel="stylesheet"  href="./bootstrap/css/bootstrap.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  	<script src="./js/bootstrap.js"></script>
+
+    <script src="./funcoes.js"></script>
+    <script src="./form.js"></script>
+
+    </head>
+
+<script>
+
+/*function funcao1(){
+  alert("Cadastro realizado com sucesso!");
+  sleep(1000);
+  window.location.href = "menu.html";
+}
+
+function sleep(delay){
+  var start = new Date().getTime();
+  while(new Date().getTime() < start + delay);
+}
+*/
+
+
+
+function funcao1() {
+    var cpf = parseFloat(document.dados.cpf.value);
+
+    if (document.dados.cpf.value.length == 0 || isNaN(cpf)) {
+      //window.alert("Informe o primeiro numero corretamente!");
+      document.getElementById("grupoN1").classList.add("has-error");
+      document.getElementById("alertN1").style.display = "block";
+      document.dados.cpf.value = "";
+      document.dados.cpf.focus();
+      return;
+    }
+    document.getElementById("grupoN1").classList.remove("has-error");
+    document.getElementById("alertN1").style.display = "none";
+    window.alert("Cadastro realizado com sucesso!");
+    sleep(1000);
+    window.location.href = "menu.html";
+  }
+
+  function sleep(delay){
+    var start = new Date().getTime();
+    while(new Date().getTime() < start + delay);
+
+}
+
+
+
+
+
+</script>
+
+<body>
+
+  <div class="col-md-13">
+    <div class="jumbotron text-center">
+      <h1>Cadastro de Alunos</h1>
+    </div>
+  </div>
+
+  <nav class="navbar navbar-default"style="background-color: #eee">
+    <div class="container-fluid">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="menu.html">Home</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+    <main class="container">
+        <form name="dados" action="#">
+            <fieldset>
+              <legend>Dados Pessoais</legend>
+                <div class="form-group">
+                  <div class="row">
+                      <div class="col-md-6">
+                      <label for="nome">Nome:</label>
+                      <input type="text" name="nome"  class="form-control" placeholder="Digite seu nome" >
+
+                      </div>
+
+                    <div>
+                      <br><br><input type="radio" name="genero"  value="male"> Masculino
+                      <input type="radio" name="genero"  value="female"> Feminino
+                    </div>
+                  </div>
+
+
+
+                  <div class="row">
+                    <div id="grupoN1" class="form-group">
+                      <div class="col-md-6">
+                      <br>  <label for="cpf">CPF</label>
+                        <input type="text" name="cpf" class="form-control" placeholder="111.111.111-11">
+                        <div class="alert alert-danger" style="display: none" id="alertN1">
+                          Informe o CPF corretamente.
+                        </div>
+                      </div>
+                    </div>
+
+
+
+                  <div class="col-md-6">
+                    <label for="rg">RG:</label>
+                    <input type="number" name="rg" class="form-control"placeholder="11.111.111">
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6">
+                  <br><label for="nascimento">Data de Nascimento:</label>
+                  <input type="date" name="nascimento" class="form-control"><br>
+                  </div>
+                </div>
+
+              </fieldset>
+
+            <fieldset>
+                <legend>Contato</legend>
+
+                <div class="row">
+                  <div class="col-md-4">
+                    <label for="telefone">Telefone:</label>
+                    <input type="number" name="telefone"class="form-control"placeholder="(11) 1111-1111">
+                  </div>
+
+                  <div class="col-md-4">
+                    <label for="celular">Celular:</label>
+                    <input type="number" name="celular"class="form-control"placeholder="(11) 1 1111-1111">
+                  </div>
+
+                  <div class="col-md-4">
+                    <br><br><input type="checkbox" name="tipo">Whatsapp
+                    <input type="checkbox" name="tipo">Telegram
+                    <input type="checkbox" name="tipo">Signal<br><br>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6">
+                  <label for="email">Email:</label>
+                  <input type="email" name="email"class="form-control"placeholder="Digite o seu email">
+                  </div>
+
+                  <div class="col-md-6">
+                  <label for="confirmacaoemail">Confirmação de Email</label>
+                  <input type="email" name="confirmacaoemail"class="form-control"placeholder="Digite o seu email"><br><br>
+                  </div>
+                </div>
+
+            </fieldset>
+
+            <fieldset>
+              <legend>Endereço</legend>
+                <div class="row">
+                  <div class="col-md-8">
+                    <label for="rua">Rua:</label>
+                    <input type="text" name="rua"class="form-control"placeholder="Digite a rua"><br>
+                  </div>
+
+                  <div class="col-md-4">
+                    <label for="numero">Número:</label>
+                    <input type="text" name="numero"class="form-control"placeholder="Digite o número"><br>
+                  </div>
+                </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <label for="Complemento">Complemento:</label>
+                <input type="text" name="complemento"class="form-control"placeholder="Digite o complemento">
+              </div>
+
+              <div class="col-md-6">
+                <label for="bairro">Bairro:</label>
+                <input type="text" name="bairro"class="form-control"placeholder="Digite o bairro"><br>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-3">
+                <label for="cidade">Cidade:</label>
+                <select name="cidade"class="form-control">
+                  <option value="0">Cidade:</option>
+                    <option value="0">Barão de Cocais</option>
+                    <option value="1">Catas Altas</option>
+                    <option value="2">Itabira</option>
+                    <option value="3">Santa Bárbara</option>
+                </select>
+              </div>
+
+              <div class="col-md-3">
+                <label for="estado">Estado:</label>
+                <select name="estado"class="form-control">
+                    <option value="0">UF:</option>
+                    <option value="1">ES</option>
+                    <option value="2">MG</option>
+                    <option value="3">RJ</option>
+                    <option value="4">SP</option>
+                </select><br><br>
+              </div>
+            </div>
+
+            </fieldset>
+
+            <fieldset>
+              <div class="row">
+                <legend>Login</legend>
+                <div class="col-md-6">
+                  <label for="usuario">Usuário:</label>
+                  <input type="text" name="usuario"class="form-control"placeholder="Digite o Usuário" required ><br>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="senha">Senha:</label>
+                  <input type="password" name="senha"class="form-control" placeholder="Digite a Senha" >
+                </div>
+
+                <div class="col-md-6">
+                  <label for="confirmacao">Confirmação de Senha:</label>
+                  <input type="password" name="confirmacao"class="form-control"placeholder="Digite a Senha" ><br><br>
+                </div>
+              </div>
+
+            </fieldset>
+
+          <input type="reset" class="btn btn-primary" value="Limpar">
+          <button type="button" class="btn btn-primary" onclick="funcao1()">Cadastrar</button>
+
+        </form>
+    </main>
+
+</body>
+</html>
